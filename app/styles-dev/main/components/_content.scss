@@ -17,12 +17,20 @@ body{
 ul.nav-tabs {
   > li {
     &.active {
-      > a {
+   > a {
         border-top: solid 3px #428bca !important;
       }
     }
   }
 }
+/*
+ul.nav-tabs {
+  > li {
+      > a {
+        color: #2d9fd9 !important;
+    }
+  }
+} */
 
 div.scrollable {
   position: relative;
@@ -220,7 +228,7 @@ span.required {
   /*just for the presentation */
   .pointer-main:hover{
     cursor: pointer;
-    background-color: #4f99ed;
+    background-color: #2d9fd9;
     color: #fff;
   }
 
@@ -334,4 +342,9 @@ span.required {
     }
 
   }
+
+}
+
+footer {
+padding: 0px 75px 0px 0px;
 }
