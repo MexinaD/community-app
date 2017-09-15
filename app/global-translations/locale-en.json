@@ -563,7 +563,7 @@
     "label.input.searchbyuser": "Search by user",
     "label.input.searchactivities": "Search activities",
     "label.input.additionalinformation": "Additional information",
-    "label.input.changelanguage": "Change language:",
+    "label.input.changelanguage": "Language:",
 
     "#Search": "..",
     "label.search.scope.all": "All",
