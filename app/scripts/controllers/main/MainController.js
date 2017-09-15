@@ -330,7 +330,7 @@
                 tmhDynamicLocale.set(lang.code);
                 scope.optlang = lang;
                 };
-            scope.helpf = function()
+           /* scope.helpf = function()
             {
                 // first, create addresses array
             var addresses = ["https://mifosforge.jira.com/wiki/display/docs/User+Setup","https://mifosforge.jira.com/wiki/display/docs/Organization",
@@ -402,7 +402,7 @@
                           }//else
                 if(addrfound == false) window.open(addresses[10]); // substring not matching to any model -> open start user manual page
 
-            };//helpf
+            };//helpf */
 
             sessionManager.restore(function (session) {
                 scope.currentSession = session;
