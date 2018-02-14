@@ -65,8 +65,10 @@
                     clientAccountResource: defineResource(apiVer + "/clients/:clientId/accounts", {clientId: '@clientId'}, {
                         getAllClients: {method: 'GET', params: {}}
                     }),
-                    clientNotesResource: defineResource(apiVer + "/clients/:clientId/notes", {clientId: '@clientId'}, {
-                        getAllNotes: {method: 'GET', params: {}, isArray: true}
+                    clientNotesResource: defineResource(apiVer + "/clients/:clientId/notes/:noteId", {clientId: '@clientId', noteId: '@noteId'}, {
+                        getAllNotes: {method: 'GET', params: {}, isArray: true},
+                        delete:{method:'DELETE',params:{}},
+                        put:{method:'PUT',params:{}}
                     }),
                     clientTemplateResource: defineResource(apiVer + "/clients/template", {}, {
                         get: {method: 'GET', params: {}}
@@ -78,13 +80,18 @@
                         get: {method: 'GET', params: {}}
                     }),
 
-                    surveyResource: defineResource(apiVer + "/surveys", {}, {
-                        get: {method: 'GET', params: {}, isArray: true}
+                    surveyResource: defineResource(apiVer + "/surveys/:surveyId", {surveyId: '@surveyId'}, {
+                        getAll: {method: 'GET', params: {}, isArray: true},
+                        get: {method: 'GET', params: {surveyId: '@surveyId'}, isArray: false},
+                        update: {method: 'PUT', params: {surveyId: '@surveyId'}},
+                        activateOrDeactivate: {method: 'POST', params: {surveyId: '@surveyId',command: '@command'}},
                     }),
-                    surveyScorecardResource: defineResource(apiVer + "/surveys/:surveyId/scorecards", {surveyId: '@surveyId'}, {
+                    surveyScorecardResource: defineResource(apiVer + "/surveys/scorecards/:surveyId", {surveyId: '@surveyId'}, {
                         post: {method: 'POST', params: {}, isArray: false}
                     }),
-
+                    clientSurveyScorecardResource: defineResource(apiVer + "/surveys/scorecards/clients/:clientId", {clientId: '@clientId'}, {
+                        get: {method: 'GET', params: {clientId: '@clientId'}, isArray: true}
+                    }),
                     groupResource: defineResource(apiVer + "/groups/:groupId/:anotherresource", {groupId: '@groupId', anotherresource: '@anotherresource'}, {
                         get: {method: 'GET', params: {}},
                         getAllGroups: {method: 'GET', params: {}, isArray: true},
@@ -310,7 +317,7 @@
                     holValueResource: defineResource(apiVer + "/holidays/:holId", {holId: '@holId'}, {
                         getholvalues: {method: 'GET', params: {}},
                         update: { method: 'PUT', params: {}}
-                    }),                    
+                    }),
                     holidayTemplateResource: defineResource(apiVer + "/holidays/template", {}, {
                         get: {method: 'GET', params: {}, isArray: true}
                     }),
@@ -527,6 +534,10 @@
                         get: {method: 'GET', params: {}, isArray : true},
                         put: {method: 'PUT', params:{}}
                     }),
+                    externalServicesNotificationResource: defineResource(apiVer + "/externalservice/NOTIFICATION", {},{
+                        get: {method: 'GET', params: {}, isArray : true},
+                        put: {method: 'PUT', params:{}}
+                    }),
                     externalServicesResource: defineResource(apiVer + "/externalservice/:id", {id: '@id'},{
                         get: {method: 'GET', params: {}, isArray : true},
                         put: {method: 'PUT', params:{}}
@@ -663,7 +674,7 @@
                         save: {method: 'POST', params: {}},
                         delete: {method: 'DELETE', params: {}}
                     }),
-					
+
 					adHocQueryResource: defineResource(apiVer + "/adhocquery/:adHocId", {adHocId: '@adHocId'}, {
                         getAllAdHocQuery: {method: 'GET', params: {}, isArray: true},
                         disableAdHocQuery: {method: 'POST'},
@@ -672,6 +683,15 @@
                     }),
                     adHocQueryTemplateResource: defineResource(apiVer + "/adhocquery/template", {}, {
                         get: {method: 'GET', params: {}}
+                    }),
+
+                    twoFactorResource: defineResource(apiVer+"/twofactor", {deliveryMethod: "@deliveryMethod", extendedToken: "@extendedToken"}, {
+                        getDeliveryMethods: {method: 'GET', params: {}, isArray: true},
+                        requestOTP: {method: 'POST', params: {deliveryMethod: "@deliveryMethod", extendedToken: "@extendedToken"}}
+                    }),
+                    twoFactorConfigResource: defineResource(apiVer+"/twofactor/configure", {}, {
+                        getAllConfigs: {method: 'GET', params: {}},
+                        put: {method: 'PUT', params: {}}
                     })
                 };
             }];
