@@ -521,7 +521,7 @@
                                 <td>{{charge.chargeCalculationType.value}}</td>
                                 <td>{{charge.amount | number}}</td>
                                 <td>{{charge.chargeTimeType.value}}</td>
-                                <td><a href="" ng-click="deleteCharge($index)"><i class="fa fa-times "></i></a></td>
+                                <td><a href="" ng-click="deleteCharge($index)"><i class="fa fa-times-circle fa-2x"></i></a></td>
                             </tr>
                         </table>
                     </div>
@@ -767,7 +767,7 @@
                 </fieldset>
             </form>
         </wz-step>
-        <wz-step wz-title="Preview">
+        <wz-step ng-if="isClicked" wz-title="Preview">
             <form name="Preview" novalidate="" class="form-horizontal">
                 <br>
                 <br>

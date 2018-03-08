@@ -454,6 +454,9 @@
 
     "#Inputs": "..",
     "label.input.paymentdate":"Payment date",
+   "#Tooltips": "..",
+   "label.tooltip.charges.active.true": "Active",
+   "label.tooltip.charges.active.false": "Inactive",
 
     "#---------": "------------",
 
@@ -2572,11 +2575,11 @@
     "validation.msg.tax.group.endDate.can.not.modify.end.date.once.updated":"End date modification is not supported",
     "validation.msg.tax.group.total.percentage.is.greater.than.max":"Group total percentage must be less than 100 at any point of time",
     "validation.msg.tax.component.group.total.percentage.is.greater.than.max":"One of the group total is more than 100 with this modification",
-
+    ""#Tooltips": "..",
+    "label.tooltip.employees.active.true": "Active",
+    "label.tooltip.employees.active.false": "Inactive",
     "#--------------": "------------",
-
     "#Admin-System": "....",
-
     "#Headings": "..",
     "label.heading.text": "Text",
     "label.heading.addcode": "Add Code",
@@ -4280,7 +4283,7 @@
 	"label.heading.createadhocquery": "Create AdHocQuery",
 	"label.heading.editadhocquery": "Edit AdHocQuery",
 	"label.view.adhocs" : "Define AdhocQuery for Organization",
-"label.input.isnotification": "Is Notification",
+  "label.input.isnotification": "Is Notification",
   "label.heading.editsmscampaign": "Edit SMS Campaign",
   "label.input.options": "Options",
   "label.heading.options": "Options",
