@@ -2575,7 +2575,7 @@
     "validation.msg.tax.group.endDate.can.not.modify.end.date.once.updated":"End date modification is not supported",
     "validation.msg.tax.group.total.percentage.is.greater.than.max":"Group total percentage must be less than 100 at any point of time",
     "validation.msg.tax.component.group.total.percentage.is.greater.than.max":"One of the group total is more than 100 with this modification",
-    ""#Tooltips": "..",
+    "#Tooltips": "..",
     "label.tooltip.employees.active.true": "Active",
     "label.tooltip.employees.active.false": "Inactive",
     "#--------------": "------------",

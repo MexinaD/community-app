@@ -15,23 +15,19 @@
 <!--Loader -->
 <div id="loaderWrapper" data-ng-hide="domReady" style="position: absolute; height: 100%; width: 100%; top: 0;">
     <div id="loader" style="margin: 175px auto">
-
         <img src="./images/logo.png" alt="Amala" style="min-width: 50px;   width: 15%; margin: 0 auto"
              class="img-responsive">
         <img src="images/small-loader.gif" style="margin: 10px auto" class="img-responsive">
-
     </div>
 </div>
 
 <div data-ng-hide="!domReady" data-ng-cloak>
     <!-- Login Form  -->
     <div class="container" style="margin-top:10vh;" data-ng-hide="currentSession.user != null" data-ng-controller="LoginFormController">
-        <div class = "row">
-           <div class = "col-xs-12">
-              <div id = "head">
-                 
-              </div>
-           </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="head"></div>
+            </div>
         </div>
 
         <div class="row">
@@ -56,13 +52,10 @@
 
                         <div class="form-group">
                             <input type="password" data-ng-model="passwordDetails.password"
-                                   placeholder="{{ 'label.input.password' | translate }}" class="input-sm form-control"
-                                   required
-                                   id="password">
+                                   placeholder="{{ 'label.input.password' | translate }}" class="input-sm form-control" required id="password">
                         </div>
                         <div class="form-group">
-                            <input type="password" data-ng-model="passwordDetails.repeatPassword"
-                                   placeholder="{{ 'label.input.repeatpassword' | translate }}"
+                            <input type="password" data-ng-model="passwordDetails.repeatPassword" placeholder="{{ 'label.input.repeatpassword' | translate }}"
                                    class="input-sm form-control"
                                    required id="repeatPassword">
                         </div>
@@ -76,81 +69,76 @@
 
 
         </div>
-                  
-               <div class="row">
-                    <div class="col-sm-4 col-sm-offset-4 text-center" id = "image">
 
-                        <img src="images/logo.png" alt="Amala" style="width:80%; margin:auto;"
-                             class=" text-center img-responsive"/>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4 text-center" id="image">
 
-                <div class="row">
-                        <div data-ng-form="loginForm">
+                <img src="images/logo.png" alt="Amala" style="width:80%; margin:auto;" class="text-center img-responsive"/>
+            </div>
+        </div>
 
-                            <div class="row" ng-hide="resetPassword">
-                                   <div id="myform">
+        <div class="row ">
+            <div data-ng-form="loginForm">
 
-                                        <div id="login">
-                                            
-                                                <form>
-                                                    <p id = "separator">                            
-                                                        <input type="text" name="username"
-                                                           ng-model="loginCredentials.username"
-                                                           placeholder="{{ 'label.input.username' | translate |lowercase }}"
-                                                           required/>
-                                                    </p>
-                                                    <p id = "separator">                                
-                                                         <input type="password" name="password"
-                                                           ng-model="loginCredentials.password" autocomplete="new-password"
-                                                           placeholder="{{ 'label.input.password' | translate | lowercase }}"
-                                                           required/>
-                                                    </p>
-                                                    
-                                                    <button class="btn btn-block btn-primary" type="submit" data-ng-show="!load" data-ng-click="login()"
-                                                            id="login-button">
-                                                        {{'label.button.signin' | translate }}
-                                                    </button>
-                                                    <button class="btn btn-block btn-primary" type="submit" data-ng-show="load">
-                                                        <img data-ng-src="images/ring.svg" alt=""> <b>loading...</b>
-                                                    </button>
-                                                </form>
-                                                <div class="alert alert-danger" ng-show="authenticationFailed" id = "errorMessage">
-                                                        {{ authenticationErrorMessage | translate }}
-                                                </div> 
-                                        </div>
-                                         
-                                    </div>
-                        
-                                      
-                   
+                <div class="row" ng-hide="resetPassword">
+                    <div id="myform">
+                        <div id="login">
+                            <form>
+                                <p id="separator">
+                                    <input type="text" name="username" ng-model="loginCredentials.username"
+                                           placeholder="{{ 'label.input.username' | translate |lowercase }}" required/>
+                                </p>
+                                <!--id conflict-->
+                                <p id="input_password">
+                                    <input type="password" name="password"
+                                           ng-model="loginCredentials.password" autocomplete="new-password"
+                                           placeholder="{{ 'label.input.password' | translate | lowercase }}" required/>
+                                </p>
+
+                                <button class="btn btn-block btn-primary" type="submit" data-ng-show="!load"
+                                        data-ng-click="login()" id="login-button">
+                                    {{'label.button.signin' | translate }}
+                                </button>
+                                <button class="btn btn-block btn-primary" type="submit" data-ng-show="load">
+                                    <img data-ng-src="images/ring.svg" alt=""> <b>loading...</b>
+                                </button>
+                            </form>
+                            <div class="alert alert-danger" ng-show="authenticationFailed" id="errorMessage">
+                                {{ authenticationErrorMessage | translate }}
                             </div>
-
                         </div>
 
-                </div> 
-
-
-                <div class="row">
-                    <div class="col-sm-5" style="margin-top: 1%" ng-init="myVar = 'https://amala.co.tz'">
-                        <p style="font-family: Georgia; font-size: 50px;">Lets grow together!</p>
-                        <p style="font-family: Berlin Sans FB; font-size: 25px;">
-                            Rapid growth in technology is widening development opportunities in the World.  <a ng-href="{{myVar}}" target="_blank">Amala</a> is designed to increase production in financial services organisations in terms of time, money and quality management. 
-                        </p>
                     </div>
-                </div>
-                    
 
-                    <div id = "footer"> 
-                       <font color="#4390df">Powered by Mifos</font>
-                   </div>   
+
+                </div>
+
+            </div>
+
         </div>
+
+
+        <div class="row ">
+            <div class="col-sm-5" style="margin-top: 1%" ng-init="myVar = 'https://amala.co.tz'">
+                <p style="font-family: Georgia; font-size: 50px;">{{'label.anchor.welcome' | translate}}</p>
+                <p style="font-family: Berlin Sans FB; font-size: 25px;">
+                    {{'label.anchor.welcome_note' |translate}} <a ng-href="{{myVar}}" target="_blank">Amala</a>
+                    {{'label.anchor.welcome_note_2' |translate}}
+                </p>
+            </div>
+        </div>
+
+
+        <div id="footer">
+            <font color="#4390df">Powered by Mifos</font>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <div ng-class="{fullscreen:true ,blockui:blockUI==true}" id="main" data-ng-hide="currentSession.user == null">
         <div class="loading-widget-div" data-ng-show="blockUI">
             <!-- TODO : insert loader here-->
-             <span class="centerloader">
+            <span class="centerloader">
                 <img src="images/833.svg" class="img-responsive">
             </span>
             <!--<div style="margin: 175px auto">
@@ -161,7 +149,7 @@
             <div id="mifos-reskin-header-nav" ng-include="'views/_topnavbar.html'"></div>
 
             <div id="mifos-reskin-body-container" style="background-color: #ebeff1">
-                <nav id="mifos-reskin-side-nav"  ng-scrollbar>
+                <nav id="mifos-reskin-side-nav" ng-scrollbar>
                     <div class="left-nav">
                         <ul>
                             <li>
@@ -228,7 +216,7 @@
                             </li>
                             <li>
                                 <a class="black" href="#/notifications">
-                                    <i class="fa fa-bell" ></i>
+                                    <i class="fa fa-bell"></i>
                                     <span>{{'label.heading.notification' | translate }}</span>
                                 </a>
                             </li>
@@ -246,14 +234,16 @@
 
                             <li>
                                 <a class="black" href="#/createcenter">
-                                <i class="fa fa-map-marker "></i>+ <span>{{'label.anchor.center' | translate}}</span>
+                                    <i class="fa fa-map-marker "></i>+
+                                    <span>{{'label.anchor.center' | translate}}</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a class="black" href="mailto:team.amala@singoafrica.com?Subject=Need%20assistance">
                                     <i class="fa fa-question-circle"></i>
-                                    <span>{{'label.anchor.help' | translate }}</span> &nbsp; <i class="fa fa-external-link"></i>
+                                    <span>{{'label.anchor.help' | translate }}</span> &nbsp; <i
+                                        class="fa fa-external-link"></i>
                                 </a>
                             </li>
 
@@ -266,8 +256,10 @@
                 <!-- Footer -->
                 <br><br>
                 <footer align="right">
-               
-                <p><a href="mailto:team.amala@singoafrica.com?Subject=Need%20assistance">Support</a> &copy;<script> document.write(new Date().getFullYear()); </script> Amala</p>
+
+                    <p><a href="mailto:team.amala@singoafrica.com?Subject=Need%20assistance">Support</a> &copy;<script> document.write(new Date().getFullYear()); </script>
+                        Amala
+                    </p>
                 </footer>
                 <hr>
             </div>
