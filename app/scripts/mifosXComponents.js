@@ -22,6 +22,7 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'main/TaskController',
             'main/SearchController',
             'main/NavigationController',
+	    'main/DisplayLogoController',
             'collection/ProductiveCollectionSheetController',
             'collection/CollectionSheetController',
             'collection/IndividualCollectionSheetController',

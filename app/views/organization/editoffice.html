@@ -12,6 +12,7 @@
     		    <api-validate></api-validate>
     		    <fieldset>
     		        <legend>{{'label.heading.editoffice' | translate}}</legend>
+				<div class="col-sm-9 col-md-9">
     				    <div class="form-group">
     				        <label class="control-label col-sm-2" for="name">{{ 'label.input.office' | translate }}<span
     				                class="required">*</span></label>
@@ -49,12 +50,56 @@
     				            <input id="externalId" type="text" name="externalId" ng-model="formData.externalId" class="form-control"/>
     				        </div>
     				    </div>
+
     				    <div class="col-md-offset-3">
     				        <a id="cancel" href="#/offices">
     				            <button type="reset" class="btn btn-default">{{'label.button.cancel' | translate}}</button>
     				        </a>
     				        <button id="save" type="submit" class="btn btn-primary" has-permission='UPDATE_OFFICE'>{{'label.button.save' | translate}}</button>
     				    </div>
+				</div>
+             <div class="pull-right">
+	<div data-ng-show="parentId==id">
+      <script type="text/ng-template" id="uploadpic.html">
+		<div class="modal-header silver">
+			<h3 class="bolder">{{'label.heading.selectofficeimage' | translate}}</h3>
+		</div>
+		<div class="modal-body">
+			<api-validate></api-validate>
+			<br>
+			<input type="file" ngf-select ng-model="file">
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+			<button class="btn btn-primary" ng-click="upload(file)">{{'label.button.upload' | translate}}</button>
+		</div>
+	</script>
+	<script type="text/ng-template" id="deletePic.html">
+		<div class="modal-header silver">
+			<h3 class="bolder">{{'label.heading.deleteofficeimage' | translate}}</h3>
+		</div>
+		<div class="modal-body">
+			<api-validate></api-validate>
+			<br>
+			<button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+			<button class="btn btn-primary" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
+		</div>
+	</script>
+								 
+		<img ng-hide="office.imagePresent" ng-src="./images/office-image-placeholder.png" alt="Logo">
+		<img ng-show="office.imagePresent"  ng-src="{{image}}" alt="Logo" data-ng-click="showPicture()" title="{{'label.zoom' | translate}}" >
+			<div class="btn-group-xs center">
+			<button type="button" class="btn btn-primary" data-ng-click="uploadPic()"
+											uib-tooltip="{{'label.button.uploadpic' | translate}}">
+										<i class="fa fa-upload"></i>&nbsp;{{'label.button.uploadLogo' | translate}}
+									</button>
+									<button type="button" class="btn btn-primary" ng-show="office.imagePresent" data-ng-click="deletePic()"
+											uib-tooltip="{{'label.button.deletepic' | translate}}">
+										<i class="fa fa-trash-o"></i>
+									</button>
+	</div>
+    				    </div>
+				    </div>
     		    </fieldset>
     		</form>
     	</div>

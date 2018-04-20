@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" ng-click="isNavCollapsed = !isNavCollapsed">
@@ -78,6 +78,9 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="main-menu-right">
+	     <li class="" ng-controller="DisplayLogoController"><img ng-hide="office.imagePresent" ng-src="./images/office-image-placeholder.png" alt="Logo">
+		<img ng-show="office.imagePresent"  ng-src="{{image}}" alt="Logo">
+	      </li>
                 <li class="" uib-dropdown id="notification-icon" ng-controller="NotificationsController" is-open="li.notif.status.isopen"
                 ng-mouseenter="li.notif.status.isopen = true" ng-mouseleave="li.notif.status.isopen = false">
                     <a href class="" uib-dropdown-toggle data-toggle="uib-dropdown"
@@ -102,7 +105,7 @@
                     <a id="user-dropdown" class="" uib-dropdown-toggle data-toggle="uib-dropdown" href>
                         {{currentSession.user.name}}<b class="caret"></b></a>
                     <ul class="" uib-dropdown-menu>
-                        <li><a id="help" href="mailto:team.amala@singoafrica.com?Subject=Need%20assistance""><i class="fa fa-question-circle"></i> {{
+                        <li><a id="help" href="mailto:team.amala@singo.africa?Subject=Need%20assistance"><i class="fa fa-question-circle"></i> {{
                             'label.anchor.help' | translate }}</a></li>
                         <li><a href="#/profile"><i class="fa fa-user"></i> {{ 'label.anchor.profile' | translate
                             }}</a></li>
